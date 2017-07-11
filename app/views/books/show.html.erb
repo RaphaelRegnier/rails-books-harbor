@@ -1,6 +1,7 @@
 <ul>
-  <li><%= @book.title %> - <%= @book.price %> </li>
-   <li><%= @book.category %> </li>
+  <li><%= @book.title %> - <%= @book.price %>$  </li>
+   <li>Category: <%= @book.category %> </li>
+   <p><%= @book.description %> </p>
    <% @book.orders.each do |order| %>
      <li> Booked from : <%= order.start_time %> to: <%= order.end_time %> </li>
    <% end %>
