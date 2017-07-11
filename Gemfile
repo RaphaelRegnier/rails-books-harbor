@@ -16,6 +16,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem 'simple-form-datepicker'
 
 group :development, :test do
   gem 'better_errors'
