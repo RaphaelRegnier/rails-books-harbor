@@ -1,5 +1,10 @@
+<%=   link_to 'new', new_book_path %>
 
 <% @books.each do |book| %>
+
+
+
+
 <ul>
   <li> <%= book.title %> - <%= book.price %> </li>
   <li> <%= book.category %> </li>
