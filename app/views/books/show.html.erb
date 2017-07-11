@@ -2,7 +2,7 @@
   <li><%= @book.title %> - <%= @book.price %> </li>
    <li><%= @book.category %> </li>
    <% @book.orders.each do |order| %>
-     <li> <%= order.start_time %> </li>
+     <li> Booked from : <%= order.start_time %> to: <%= order.end_time %> </li>
    <% end %>
   <!-- DESCRIPTION AND OTHER ATTRIBUTES -->
 </ul>
