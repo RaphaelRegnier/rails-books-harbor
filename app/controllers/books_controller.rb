@@ -1,13 +1,34 @@
 class BooksController < ApplicationController
-  def new
-  end
-
-  def edit
-  end
-
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
   def show
   end
 
   def index
   end
+
+  def new
+  end
+
+  def create
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+
+  def set_book
+    @book = Book.find(params[:id])
+  end
+
+  def book_params
+    params.require(:book).permit(:title, :description, :price, :category, :author)
+  end
+
 end
