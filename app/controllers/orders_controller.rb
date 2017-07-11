@@ -1,10 +1,12 @@
 class OrdersController < ApplicationController
 
   def create
-    raise
 @book = Book.find(params[:book_id])
 @order = Order.new(order_params)
 @order.book = @book
+#NEED TO LINK THE ORDER TO THE USER TO MAKE THE ORDER VALID FOR SAVE.
+@order.save
+raise
 redirect_to book_path(@book)
   end
 
