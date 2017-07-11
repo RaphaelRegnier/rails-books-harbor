@@ -1,12 +1,12 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   def show
-    @books = Book.all()
     #THE FORM FOR THE NEW ORDER IS ON THE SHOW PAGE OF THE BOOK
     @order = Order.new()
   end
 
   def index
+    @books = Book.all()
   end
 
   def new
