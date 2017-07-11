@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rails', '5.0.4'
 gem 'redis'
 
+gem 'faker'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
@@ -18,6 +19,11 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'simple-form-datepicker'
+
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'
 
 group :development, :test do
   gem 'better_errors'

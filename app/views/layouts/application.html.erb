@@ -10,12 +10,13 @@
   </head>
   <body>
     <header>
-      <%= render 'shared/navbar' %>
-      <%= render 'shared/flashes' %>
+      <%= render 'layouts/navbar' %>
+      <%= render 'layouts/flashes' %>
     </header>
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
   </body>
 </html>
