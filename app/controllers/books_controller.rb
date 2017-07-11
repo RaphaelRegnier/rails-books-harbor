@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   def show
-  @books = Book.all()
+    @books = Book.all()
+    #THE FORM FOR THE NEW ORDER IS ON THE SHOW PAGE OF THE BOOK
+    @order = Order.new()
   end
 
   def index
@@ -12,15 +14,22 @@ class BooksController < ApplicationController
   end
 
   def create
+    @book = Book.create(book_params)
+    redirect_to books_path
+    #SHOULD DO THE CONDITION WITH SAVE AND RENDER NEW
   end
 
   def edit
   end
 
   def update
+    @book.update(book_params)
+    redirect_to book_path
   end
 
   def destroy
+    @book.destroy
+    redirect_to(:back)
   end
 
   private
