@@ -1,11 +1,16 @@
 class OrdersController < ApplicationController
 
   def create
+@book = Book.find(params[:book_id])
+@order = Order.new(order_params)
+@order.book = @book
+redirect_to book_path(@book)
   end
 
   def destroy
     @order = Order.find(params[:id])
     @order.destroy
+    redirect_to(:back)
   end
 
   private
