@@ -23,6 +23,12 @@
 .navbar-wagon-brand img {
   width: 50px;
 }
+/* Nabar left section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
