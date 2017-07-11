@@ -1,8 +1,9 @@
 <ul>
-  <li><%= @book.title %> - <%= @book.price %> </li>
-  <li><%= @book.category %> </li>
-  <% @book.orders.each do |order| %>
-    <li> <%= order.start_time %> </li>
+  <li><%= @book.title %> - <%= @book.price %>$  </li>
+   <li>Category: <%= @book.category %> </li>
+   <p><%= @book.description %> </p>
+   <% @book.orders.each do |order| %>
+     <li> Booked from : <%= order.start_time %> to: <%= order.end_time %> </li>
    <% end %>
    <% if @book.photo? %>
   <%= cl_image_tag @book.photo.path, width: 200, height: 300, crop: :fill %>

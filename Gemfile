@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rails', '5.0.4'
 gem 'redis'
 
+gem 'faker'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
