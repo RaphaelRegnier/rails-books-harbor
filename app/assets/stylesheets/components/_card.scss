@@ -1,5 +1,16 @@
+// SHOULD BE IN ANOTHER PAGE
 .margin-top{
   margin-top:100px;
+}
+
+.index-title{
+   font-family: 'Roboto', serif;
+   font-weight: 500;
+   font-size: 35px;
+   margin-left: 10px;
+   .blue{
+    color: $blue;
+   }
 }
 
 .card {
