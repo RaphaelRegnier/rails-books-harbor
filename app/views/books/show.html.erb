@@ -24,6 +24,7 @@
       </ul>
     </div>
 <!-- FORM FOR ORDER -->
+<<<<<<< HEAD
     <div class="orderbox">
     <%= simple_form_for [@book, @order] do |f| %>
       <%= f.input :start_time, as: :date, html5: true %>
@@ -33,3 +34,11 @@
     </div>
   </div>
 </div>
+=======
+  <%= simple_form_for [@book, @order] do |f| %>
+    <%= f.input :start_time, as: :date, html5: true %>
+    <%= f.input :end_time, as: :date, html5: true %>
+    <%= f.input :photos, as: :attachinary %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  <%end%>
+>>>>>>> master
