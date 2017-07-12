@@ -1,2 +1,8 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h2 class="under-navbar"><%= @user.first_name %><%= @user.last_name %></h2>
+<ul class="under-navbar">
+<% @user.orders.each do |order| %>
+    <li><%= order.book.title %> <%= order.book.category %> <%= order.start_time %> - <%= order.end_time %></li>
+    <li><%= cl_image_tag order.book.photo.path, height: 300, width: 400, crop: :fill %></li>
+  <% end %>
+</ul>
+<h4 class="under-navbar"><%= link_to "Edit", edit_user_registration_path %></h4>
