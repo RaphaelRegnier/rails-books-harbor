@@ -1,21 +1,23 @@
 <ul>
-  <li><%= @book.title %> - <%= @book.price %>$  </li>
-   <li>Category: <%= @book.category %> </li>
-   <p><%= @book.description %> </p>
-   <% @book.orders.each do |order| %>
-     <li> Booked from : <%= order.start_time %> to: <%= order.end_time %> </li>
-   <% end %>
-   <% if @book.photo? %>
+  <li> <%= @book.title %> - <%= @book.price %>$ </li>
+  <li>Category: <%= @book.category %> </li>
+  <p> <%= @book.description %> </p>
+  <% @book.orders.each do |order| %>
+  <li> Booked from : <%= order.start_time %> to: <%= order.end_time %> </li>
+  <% end %>
+  <% if @book.photo? %>
   <%= cl_image_tag @book.photo.path, width: 200, height: 300, crop: :fill %>
   <!-- DESCRIPTION AND OTHER ATTRIBUTES -->
-  <%end%>
+  <% end %>
 </ul>
 
 
 <!-- FORM FOR ORDER -->
-  <%= simple_form_for [@book, @order] do |f| %>
-    <%= f.input :start_time, as: :date, html5: true %>
-    <%= f.input :end_time, as: :date, html5: true %>
-    <%= f.input :photos, as: :attachinary %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <%end%>
+
+<%= simple_form_for [@book, @order] do |f| %>
+<%= f.input :start_time, as: :date, html5: true %>
+<%= f.input :end_time, as: :date, html5: true %>
+<%= f.button :submit, class: 'btn btn-primary' %>
+<%end%>
+
+
