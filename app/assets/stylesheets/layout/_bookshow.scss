@@ -1,6 +1,7 @@
 .bookbox{
   display: flex;
   justify-content: space-between;
+  margin-top: 100px;
 }
 
 .bookinfo{
@@ -9,4 +10,5 @@
 
 .infolist{
   list-style: none;
+  padding: 40px;
 }
