@@ -1,7 +1,7 @@
 <div class="container margin-top">
  <div class="row">
+    <% if user_signed_in? && !current_user.books.empty? %>
   <h3 class = "index-title"><span class="blue"> MY </span>  COLLECTION</h3>
-    <% if user_signed_in? %>
       <% current_user.books.each do |book| %>
         <div class="col-xs-12 col-sm-6 col-md-4 padded">
           <div class="card">
@@ -19,13 +19,9 @@
         <% end %>
       <% end %>
   </div>
-</div>
 
 
 
-
-
-<div class="container margin-top">
   <div class="row">
   <h3 class = "index-title"><span class="blue"> NEW </span> ARRIVALS</h3>
     <% @books.each do |book| %>
