@@ -13,9 +13,11 @@
 
 
 <!-- FORM FOR ORDER -->
+
 <%= simple_form_for [@book, @order] do |f| %>
 <%= f.input :start_time, as: :date, html5: true %>
 <%= f.input :end_time, as: :date, html5: true %>
 <%= f.button :submit, class: 'btn btn-primary' %>
 <%end%>
+
 
