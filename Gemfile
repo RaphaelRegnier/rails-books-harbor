@@ -10,6 +10,7 @@ gem 'puma'
 gem 'rails', '5.0.4'
 gem 'redis'
 
+
 gem 'faker'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -24,6 +25,7 @@ gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+gem 'jquery-dotdotdot-rails'
 
 group :development, :test do
   gem 'better_errors'
