@@ -1,14 +1,28 @@
 .bookbox{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 100px;
 }
 
 .bookinfo{
-  width: 50%;
+  padding: 40px 0px;
+  text-transform: uppercase;
+  max-width: 50%;
+}
+
+.book-title{
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.infobox{
+
 }
 
 .infolist{
   list-style: none;
-  padding: 40px;
+  padding: 40px 0px;
+}
+
+.orderbox{
 }
