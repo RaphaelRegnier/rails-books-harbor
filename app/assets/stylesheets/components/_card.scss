@@ -1,0 +1,86 @@
+.margin-top{
+  margin-top:100px;
+}
+
+.card {
+  height: 400px;
+  background-color: white;
+  color: black;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.padded{
+  padding:12px;
+}
+
+.card-image{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height:50%;
+  background-size: cover;
+}
+
+.book-content{
+  position:absolute;
+  top:50%;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.book-title {
+  color: black;
+  font-family: 'Roboto', serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: 12px;
+  z-index: 3 !important;
+}
+
+.book-description{
+  color: grey;
+  font-size: 15px;
+  font-weight:400;
+}
+
+.book-price{
+  color: #0FCFCA;
+  position: absolute;
+  bottom:10px;
+  right:10px;
+
+}
+
+.book-category {
+  position: absolute;
+  bottom:10px;
+  left:20px;
+  color: grey;
+  font-size: 10px;
+  font-weight: 400;
+  background-color: rgb(240, 240, 240);
+  padding:2px 5px;
+  font-family: 'Roboto', serif;
+}
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
