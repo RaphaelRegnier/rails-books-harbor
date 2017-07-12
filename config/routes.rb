@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :orders, only: [:create]
   end
   resources :orders, only: [:destroy]
-  resources :users
+  resources :users, only: [:show, :edit]
   mount Attachinary::Engine => "/attachinary"
 end
