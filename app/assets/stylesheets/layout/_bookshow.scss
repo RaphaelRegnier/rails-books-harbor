@@ -1,16 +1,21 @@
-.bookbox{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 100px;
+.margin-300{
+  margin-top: 300px;
 }
 
 .bookvisual{
-  padding: 40px 0px;
+  // padding: 40px 0px;
   text-transform: uppercase;
 }
 
+.bookphoto{
+  width: 700px;
+  height:auto;
+}
+
 .bookinfo{
-  padding: 40px 0px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-left: 40px;
   text-transform: uppercase;
 }
 
@@ -20,6 +25,7 @@
 .book-title{
   text-transform: uppercase;
   font-size: 25px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .infobox{
@@ -39,4 +45,9 @@
   border-radius: 3px;
   padding-left: 50px;
   padding-right: 50px;
+}
+
+.btn-order:hover{
+  background-color: #18f2e7;
+  color: white;
 }
