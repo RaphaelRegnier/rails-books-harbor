@@ -1,16 +1,18 @@
 
 <div class="bookbox">
       <!-- Display the movie's info here -->
-  <div class="bookinfo">
+  <div class="bookvisual">
     <%# cl_image_tag @book.image %>
-    <h3 class="book-title"><%= @book.title + " by " + @book.author%></h3>
-    <p class="book-description"><% @book.description %></p>
+    <div class="picbox">
+      <h3 class="book-title"><%= @book.title + " | " + @book.author%></h3>
+      <p class="book-description"><% @book.description %></p>
+    </div>
   </div>
 
   <div class="bookinfo">
     <div class="infobox">
       <ul class="infolist">
-        <li>Title : <%= @book.title.upcase%> </li>
+        <li>Title : <%= @book.title%> </li>
         <li>Author: <%= @book.author%> </li>
 
         <li>Price: $ <%= @book.price %> </li>
