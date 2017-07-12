@@ -17,7 +17,12 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.create(book_params)
-    redirect_to books_path
+    @book.user = current_user
+    if @book.save
+      redirect_to books_path
+    else
+      render :new
+    end
     #SHOULD DO THE CONDITION WITH SAVE AND RENDER NEW
   end
 

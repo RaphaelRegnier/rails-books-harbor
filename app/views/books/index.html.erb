@@ -1,3 +1,29 @@
+<div class="container margin-top">
+ <div class="row">
+  <h3 class = "index-title"><span class="blue"> MY </span>  COLLECTION</h3>
+    <% if user_signed_in? %>
+      <% current_user.books.each do |book| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 padded">
+          <div class="card">
+            <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path book.photo.path %>');" > </div>
+              <div class="book-content">
+              <h3 class="book-title"> <%= book.title%> </h3>
+                <div class="book-description"> <%= book.description %></div>
+              </div>
+              <h3 class = "book-price"> <%= book.price %> $ </h3>
+              <span class = "book-category"> <%= book.category.upcase %> </span>
+              <li> <%= link_to 'show', book_path(book) %> </li>
+              <%= link_to '', book_path(book), class: 'card-link' %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+
+
+
+
 
 <div class="container margin-top">
   <div class="row">
