@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
+gem "gmaps4rails"
 gem 'geocoder'
 gem 'omniauth-facebook'
 gem 'devise'
@@ -27,6 +28,10 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'jquery-dotdotdot-rails'
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 group :development, :test do
   gem 'better_errors'

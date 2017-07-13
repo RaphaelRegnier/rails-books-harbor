@@ -6,6 +6,8 @@
 //= require attachinary
 //= require jquery.dotdotdot
 //= require_tree.
+//= require underscore
+//= require gmaps/google
 
 $(document).ready(function() {
   $('.attachinary-input').attachinary();
