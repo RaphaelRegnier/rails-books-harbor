@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   def create
     @book = Book.find(params[:book_id])
 
+
     # @orders = Order.where(book_id: @book.id).where("(DATEDIFF(order.start_time, ?) * DATEDIFF(?, order.end_time)) >= 0", params[:order][:start_time].to_date, params[:order][:end_time].to_date)
 
 
@@ -13,8 +14,9 @@ class OrdersController < ApplicationController
       @order.book = @book
       @order.user = current_user
       @order.save
-      redirect_to book_path(@book)
+      redirect_to current_user
     # end
+
   end
 
   def destroy

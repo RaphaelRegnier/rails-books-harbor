@@ -8,7 +8,16 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all()
+    @books = Book.all
+    @users = User.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
+    if params[:title]
+      redirect_to results_books_path
+    end
   end
 
   def new
@@ -37,6 +46,10 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     redirect_to(:back)
+  end
+
+  def results
+    @books = Book.search(params[:title]).order("created_at DESC")
   end
 
   private

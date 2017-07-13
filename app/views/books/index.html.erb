@@ -1,3 +1,4 @@
+
 <div class="container margin-top">
  <div class="row">
     <% if user_signed_in? && !current_user.books.empty? %>
@@ -14,20 +15,27 @@
               <span class = "book-category" id= "on-small-card"> <%= book.category.upcase %> </span>
               <li> <%= link_to 'show', book_path(book) %> </li>
               <%= link_to '', book_path(book), class: 'card-link' %>
+
             </div>
+            <h3 class = "book-price"> <%= book.price %> $ </h3>
+            <span class = "book-category"> <%= book.category.upcase %> </span>
+            <li> <%= link_to 'show', book_path(book) %> </li>
+            <%= link_to '', book_path(book), class: 'card-link' %>
           </div>
-        <% end %>
+        </div>
       <% end %>
-  </div>
+    <% end %>
+</div>
 
 
 
-  <div class="row">
-  <h3 class = "index-title"><span class="blue"> NEW </span> ARRIVALS</h3>
-    <% @books.each do |book| %>
-    <div class="col-xs-12 col-sm-6 col-md-4 padded">
-      <div class="card">
-        <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path book.photo.path %>');" > </div>
+<div class="row">
+<h3 class = "index-title"><span class="blue"> NEW </span> ARRIVALS</h3>
+  <% @books.each do |book| %>
+  <div class="col-xs-12 col-sm-6 col-md-4 padded">
+    <div class="card">
+      <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path book.photo.path %>');" > </div>
+
 
         <div class="book-content">
         <h3 class="book-title"> <%= truncate(book.title, length: 19, separator: " ", omission: " ...") %> </h3>
@@ -37,9 +45,15 @@
         <span class="book-category" id="on-small-card" > <%= book.category.upcase %> </span>
         <li> <%= link_to 'show', book_path(book) %> </li>
         <%= link_to '', book_path(book), class: 'card-link' %>
+
       </div>
+      <h3 class = "book-price"> <%= book.price %> $ </h3>
+      <span class = "book-category"> <%= book.category.upcase %> </span>
+      <li> <%= link_to 'show', book_path(book) %> </li>
+      <%= link_to '', book_path(book), class: 'card-link' %>
     </div>
-    <% end %>
   </div>
+  <% end %>
 </div>
+
 

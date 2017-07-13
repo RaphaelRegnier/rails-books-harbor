@@ -7,6 +7,8 @@
 //= require jquery.dotdotdot
 //= require bootstrap-datepicker
 //= require_tree.
+//= require underscore
+//= require gmaps/google
 
 $(document).ready(function() {
   $('.attachinary-input').attachinary();
