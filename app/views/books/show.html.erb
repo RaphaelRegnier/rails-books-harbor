@@ -1,42 +1,40 @@
-
-<div class="container margin-300">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8">
-      <div class="bookvisual">
-        <% if @book.photo? %>
-        <%= cl_image_tag @book.photo.path, crop: :fill, class:"bookphoto" %>
-        <% end %>
-        <div class="picbox">
-          <h3 class="book-title"><%= @book.title + " | " + @book.author%></h3>
-          <p class="book-description"><% @book.description %></p>
-        </div>
+<div class="row margin-top">
+  <div class="col-xs-12 col-sm-8">
+    <div class="bookvisual">
+      <% if @book.photo? %>
+      <%= cl_image_tag @book.photo.path, crop: :fill, class:"bookphoto" %>
+      <% end %>
+      <div class="picbox">
+        <h3 class="book-title"><%= @book.title + " | " + @book.author%></h3>
+        <p class="book-description"><% @book.description %></p>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="bookinfo">
-        <div class="infobox">
-          <ul class="infolist">
-            <li>Title : <%= @book.title%> </li>
-            <li>Author: <%= @book.author%> </li>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <div class="bookinfo">
+      <div class="infobox">
+        <ul class="infolist">
+          <li>Title : <%= @book.title%> </li>
+          <li>Author: <%= @book.author%> </li>
 
-            <li>Price: $ <%= @book.price %> </li>
-            <li>Category: <%= @book.category %> </li>
-            <% @book.orders.each do |order| %>
-            <li> <%= order.start_time %> -<%= order.end_time %> </li>
-            <% end %>
-            <!-- DESCRIPTION AND OTHER ATTRIBUTES -->
-          </ul>
-        </div>
-        <!-- FORM FOR ORDER -->
-        <div class="orderbox">
-          <%= simple_form_for [@book, @order] do |f| %>
-          <%= f.input :start_time, as: :date, html5: true %>
-          <%= f.input :end_time, as: :date, html5: true %>
-          <%= f.button :submit, class: 'btn btn-order' %>
+          <li>Price: $ <%= @book.price %> </li>
+          <li>Category: <%= @book.category %> </li>
+          <% @book.orders.each do |order| %>
+          <li> <%= order.start_time %> -<%= order.end_time %> </li>
           <% end %>
-        </div>
+          <!-- DESCRIPTION AND OTHER ATTRIBUTES -->
+        </ul>
+      </div>
+      <!-- FORM FOR ORDER -->
+      <div class="orderbox">
+        <%= simple_form_for [@book, @order] do |f| %>
+        <%= f.input :start_time, as: :date, html5: true %>
+        <%= f.input :end_time, as: :date, html5: true %>
+        <%= f.button :submit, class: 'btn btn-order' %>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
 
