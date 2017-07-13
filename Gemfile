@@ -26,6 +26,7 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'jquery-dotdotdot-rails'
+gem 'bootstrap-datepicker-rails'
 
 group :development, :test do
   gem 'better_errors'

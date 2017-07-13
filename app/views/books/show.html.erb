@@ -1,42 +1,60 @@
 
-<div class="container margin-300">
-  <div class="row">
-    <div class="col-xs-12 col-sm-8">
-      <div class="bookvisual">
-        <% if @book.photo? %>
-        <%= cl_image_tag @book.photo.path, crop: :fill, class:"bookphoto" %>
-        <% end %>
-        <div class="picbox">
-          <h3 class="book-title"><%= @book.title + " | " + @book.author%></h3>
-          <p class="book-description"><% @book.description %></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="bookinfo">
-        <div class="infobox">
-          <ul class="infolist">
-            <li>Title : <%= @book.title%> </li>
-            <li>Author: <%= @book.author%> </li>
+<div class="banner-show">
 
-            <li>Price: $ <%= @book.price %> </li>
-            <li>Category: <%= @book.category %> </li>
-            <% @book.orders.each do |order| %>
-            <li> <%= order.start_time %> -<%= order.end_time %> </li>
-            <% end %>
-            <!-- DESCRIPTION AND OTHER ATTRIBUTES -->
-          </ul>
-        </div>
-        <!-- FORM FOR ORDER -->
-        <div class="orderbox">
-          <%= simple_form_for [@book, @order] do |f| %>
-          <%= f.input :start_time, as: :date, html5: true %>
-          <%= f.input :end_time, as: :date, html5: true %>
-          <%= f.button :submit, class: 'btn btn-order' %>
-          <% end %>
-        </div>
-      </div>
-    </div>
+  <div class = "banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @book.photo.path %>');" >
   </div>
+
+
+  <div >
+   <%= simple_form_for [@book, @order], html: {class: "flexbox-order-form"} do |f| %>
+   <%= f.input :start_time, as: :string, label: "From:",placeholder: 'start-date', input_html: { class: 'datepicker'}, wrapper_html: {class: 'smaller'} %>
+   <%= f.input :end_time, as: :string, label: "to:",placeholder: 'end-date', input_html: { class: 'datepicker'}, wrapper_html: {class: 'smaller'}%>
+   <%= f.button :submit, class: 'btn btn-order' %>
+   <% end %>
+ </div>
+
+ <div class="banner-description">
+   <div class="flexbox-title">
+    <h3 class="book-title"> <%= @book.title%> <p id="author"> <i> by <%= @book.author %> </i></p> </h3>
+  </div>
+  <div class="book-full-description"> <%= truncate(@book.description, length: 420, omission: " ...", separator: " ") %></div>
+
+
+  <h3 id="price" class = "book-price "> <%= @book.price %> $ / week</h3>
+
+  <div class = "list-of-dates"> <h4> <i class="fa fa-calendar" aria-hidden="true"> </i> Calendar </h4>
+      <% @book.orders.each do |order| %>
+      <a href="/users/<%= order.user.id %>" class="profile-link" > <div class="date-element"> <%= order.user.first_name%> : <%= order.start_time %> | <%= order.end_time %>  </div> </a>
+      <% end %>
+    </div>
+
 </div>
+<!-- CATEGORIES IN FLEXBOX AT BOTTOM  -->
+<div class="flexbox-categories">
+  <span class = "book-category" id="on-big-card"> <%= @book.category.upcase %> </span>
+</div>
+<!-- -------------- -->
+
+
+
+
+
+</div>
+
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+$(document).ready(function() {
+$('.datepicker').datepicker();
+});
+<% end %>
+<% end %>
+
+
+
+
+
+
+
+
+
 

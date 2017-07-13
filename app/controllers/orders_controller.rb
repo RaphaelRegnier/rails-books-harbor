@@ -2,12 +2,19 @@ class OrdersController < ApplicationController
 
   def create
     @book = Book.find(params[:book_id])
-    @order = Order.new(order_params)
-    @order.book = @book
-    #NEED TO LINK THE ORDER TO THE USER TO MAKE THE ORDER VALID FOR SAVE.
-    @order.user = current_user
-    @order.save
-    redirect_to book_path(@book)
+
+    # @orders = Order.where(book_id: @book.id).where("(DATEDIFF(order.start_time, ?) * DATEDIFF(?, order.end_time)) >= 0", params[:order][:start_time].to_date, params[:order][:end_time].to_date)
+
+
+    # if @orders.count > 0
+    #   render show
+    # else
+      @order = Order.new(order_params)
+      @order.book = @book
+      @order.user = current_user
+      @order.save
+      redirect_to book_path(@book)
+    # end
   end
 
   def destroy
