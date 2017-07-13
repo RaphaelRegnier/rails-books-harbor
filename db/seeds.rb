@@ -8,12 +8,12 @@ urls = %w(https://images.pexels.com/photos/256232/pexels-photo-256232.jpeg?w=126
 
 10.times do
 user1 = User.create(first_name: Faker::Name.first_name , last_name: Faker::Name.last_name,email: Faker::Internet.email, password: Faker::Internet.password, pickup_address: Faker::Address.city)
+book1 = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 30), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(50, true) ,user: user1, photo_url: urls[i])
 
-book1 = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 30), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(3, true) ,user: user1, photo_url: urls[i])
 i += 1
-book2 = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 30), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(3, true) ,user: user1, photo_url: urls[i])
+book2 = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 30), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(50, true) ,user: user1, photo_url: urls[i])
 i += 1
-book3 = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 30), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(3, true) ,user: user1, photo_url: urls[i])
+book3 = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 30), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(50, true) ,user: user1, photo_url: urls[i])
 i += 1
 
 if i == 12
