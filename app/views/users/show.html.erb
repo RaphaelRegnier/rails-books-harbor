@@ -16,26 +16,23 @@
 
    <% @user.orders.each do |order| %>
 
-   <div class="col-xs-12 col-sm-6 col-md-4 padded">
-    <div class="card for-profile">
-      <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path order.book.photo.path %>');" > </div>
-      <div class="dates"> <%= order.start_time %> -- <%= order.end_time %></div>
+     <div class="col-xs-12 col-sm-6 col-md-4 padded">
+      <div class="card for-profile">
+        <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path order.book.photo.path %>');" > </div>
+        <div class="dates"> <%= order.start_time %> -- <%= order.end_time %></div>
         <%= link_to '', order, method: :delete, class: 'fa fa-times cross' %>
-
-      <div class="book-content">
-        <h3 class="book-title"> <%=order.book.title%> </h3>
-        <div class="book-description"> <%= order.book.description %></div>
+        <div class="book-content">
+          <h3 class="book-title"> <%=order.book.title%> </h3>
+          <div class="book-description"> <%= order.book.description %></div>
+        </div>
+        <h3 class = "book-price"> <%= order.book.price %> $ </h3>
+        <span class = "book-category"> <%= order.book.category.upcase %> </span>
+        <li> <%= link_to 'show', book_path(order.book) %> </li>
+        <%= link_to '', book_path(order.book), class: 'card-link' %>
       </div>
-      <h3 class = "book-price"> <%= order.book.price %> $ </h3>
-      <span class = "book-category"> <%= order.book.category.upcase %> </span>
-      <li> <%= link_to 'show', book_path(order.book) %> </li>
-
-      <%= link_to '', book_path(order.book), class: 'card-link' %>
-
     </div>
-  </div>
   <% end %>
 
 </div>
 </div>
-<h4 class="under-navbar"><%= link_to "Edit", edit_user_registration_path %></h4>
+<h4 class="under-navbar"><%= link_to "Edit Profile", edit_user_registration_path %></h4>
