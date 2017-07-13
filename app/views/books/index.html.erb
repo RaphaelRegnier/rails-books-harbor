@@ -1,25 +1,24 @@
-<div class="row">
-  <% if user_signed_in? && !current_user.books.empty? %>
-<h3 class = "index-title"><span class="blue"> MY </span>  COLLECTION</h3>
-    <% current_user.books.each do |book| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 padded">
-        <div class="card">
-          <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path book.photo.path %>');" > </div>
-            <div class="book-content">
-            <h3 class="book-title"> <%= book.title%> </h3>
-              <div class="book-description"> <%= book.description %></div>
+
+ <div class="row">
+    <% if user_signed_in? && !current_user.books.empty? %>
+  <h3 class = "index-title"><span class="blue"> MY </span>  COLLECTION</h3>
+      <% current_user.books.each do |book| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 padded">
+          <div class="card">
+            <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path book.photo.path %>');" > </div>
+              <div class="book-content">
+              <h3 class="book-title"> <%= truncate(book.title, length: 25, separator: " ", omission: " ...") %> </h3>
+                <div class="book-description"> <%= truncate(book.description, length: 100) %></div>
+              </div>
+              <h3 class = "book-price"> <%= book.price %> $ | week </h3>
+              <span class = "book-category" id= "on-small-card"> <%= book.category.upcase %> </span>
+              <li> <%= link_to 'show', book_path(book) %> </li>
+              <%= link_to '', book_path(book), class: 'card-link' %>
             </div>
-            <h3 class = "book-price"> <%= book.price %> $ </h3>
-            <span class = "book-category"> <%= book.category.upcase %> </span>
-            <li> <%= link_to 'show', book_path(book) %> </li>
-            <%= link_to '', book_path(book), class: 'card-link' %>
           </div>
-        </div>
       <% end %>
     <% end %>
-</div>
-
-
+   </div>
 
 <div class="row">
 <h3 class = "index-title"><span class="blue"> NEW </span> ARRIVALS</h3>
@@ -28,16 +27,17 @@
     <div class="card">
       <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path book.photo.path %>');" > </div>
 
-      <div class="book-content">
-      <h3 class="book-title"> <%=book.title%> </h3>
-        <div class="book-description"> <%= book.description %></div>
+
+        <div class="book-content">
+        <h3 class="book-title"> <%= truncate(book.title, length: 25, separator: " ", omission: " ...") %> </h3>
+          <div class="book-description"> <%= truncate(book.description, length: 100)%></div>
+        </div>
+        <h3 class = "book-price"> <%= book.price %> $ | week </h3>
+        <span class="book-category" id="on-small-card" > <%= book.category.upcase %> </span>
+        <li> <%= link_to 'show', book_path(book) %> </li>
+        <%= link_to '', book_path(book), class: 'card-link' %>
       </div>
-      <h3 class = "book-price"> <%= book.price %> $ </h3>
-      <span class = "book-category"> <%= book.category.upcase %> </span>
-      <li> <%= link_to 'show', book_path(book) %> </li>
-      <%= link_to '', book_path(book), class: 'card-link' %>
     </div>
-  </div>
   <% end %>
 </div>
 

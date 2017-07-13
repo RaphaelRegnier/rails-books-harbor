@@ -1,53 +1,134 @@
-.margin-300{
-  margin-top: 300px;
+.banner-show{
+      width: 85vw;
+      max-width: 1000px;
+    height: 75vh;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    background-color: white;
 }
 
-.bookvisual{
-  // padding: 40px 0px;
-  text-transform: uppercase;
+#author{
+  font-weight: lighter;
+  font-size: 13px;
+  text-align: right;
 }
 
-.bookphoto{
-  width: 700px;
-  height:auto;
+.banner-image{
+position: absolute;
+left: 0px;
+top: 15%;
+bottom:15%;
+height:80%;
+width:50%;
+background-size: cover;
+background-position-x: center;
 }
 
-.bookinfo{
-  padding-top: 20px;
-  padding-bottom: 40px;
-  margin-left: 40px;
-  text-transform: uppercase;
+.banner-description{
+position: absolute;
+right: 0px;
+top: 0px;
+bottom: 0px;
+width:50%;
 }
 
-.picbox{
-
-}
-.book-title{
-  text-transform: uppercase;
-  font-size: 25px;
-  font-family: 'Raleway', sans-serif;
-}
-
-.infobox{
+.flexbox-categories{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position:absolute;
+  bottom:0px;
+  height:5%;
+  width:50%;
 }
 
-.infolist{
-  list-style: none;
-  padding: 40px 0px;
+.flexbox-title{
+  position:absolute;
+top:0px;
+right: 0px;
+height:15%;
+width: 100%;
+padding: 0px 20px;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-.orderbox{
+.book-full-description{
+   position:absolute;
+top:15%;
+right: 0px;
+height:35%;
+width: 100%;
+padding: 0px 50px;
+color: grey;
+font-size: 16px;
+font-weight:400;
+font-family: 'Raleway', serif;
+text-align: justify;
 }
+
+
+.flexbox-order-form{
+position:absolute;
+top:0px;
+left: 0px;
+height:15%;
+width: 50%;
+padding-left: 20px;
+padding-right: 20px;
+padding-top: 15px;
+display: flex;
+align-items: center;
+}
+
+
+
+.smaller {
+margin-top: 0px;
+margin-bottom: 22px;
+margin-left: 5px;
+font-size: 15px;
+font-family: 'Roboto', serif;
+font-weight: 400;
+.control-label{
+  margin-bottom: 0px;
+}
+}
+
+
+#price{
+  margin-right: 20px;
+}
+
+
 
 .btn-order{
-  background-color: #16e0d6;
+  background-color: $blue;
   color: white;
   border-radius: 3px;
-  padding-left: 50px;
-  padding-right: 50px;
-}
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 0px 5px;
+  border-color: $blue;
+  opacity: 0.8;
 
-.btn-order:hover{
-  background-color: #18f2e7;
+&:hover{
+text-decoration: none;
   color: white;
+  opacity: 1;
+  background-color: $blue;
+}
+&:focus{
+  text-decoration: none;
+  color: white;
+  opacity: 1;
+  background-color: $blue;
+
+}
+}
+.btn-default:hover {
+  border-color: $blue;
 }

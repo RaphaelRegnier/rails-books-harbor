@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_attachment  :avatar, accept: [:jpg, :png, :gif]
   has_attachment :photo
   validates :first_name, :last_name, presence: true
+  geocoded_by :pickup_address
+  after_validation :geocode, if: :pickup_address_changed?
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
