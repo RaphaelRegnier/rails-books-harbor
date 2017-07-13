@@ -1,5 +1,4 @@
 
-<div class="container margin-top">
  <div class="row">
     <% if user_signed_in? && !current_user.books.empty? %>
   <h3 class = "index-title"><span class="blue"> MY </span>  COLLECTION</h3>
@@ -15,19 +14,11 @@
               <span class = "book-category" id= "on-small-card"> <%= book.category.upcase %> </span>
               <li> <%= link_to 'show', book_path(book) %> </li>
               <%= link_to '', book_path(book), class: 'card-link' %>
-
             </div>
-            <h3 class = "book-price"> <%= book.price %> $ </h3>
-            <span class = "book-category"> <%= book.category.upcase %> </span>
-            <li> <%= link_to 'show', book_path(book) %> </li>
-            <%= link_to '', book_path(book), class: 'card-link' %>
           </div>
-        </div>
       <% end %>
     <% end %>
-</div>
-
-
+   </div>
 
 <div class="row">
 <h3 class = "index-title"><span class="blue"> NEW </span> ARRIVALS</h3>
@@ -45,14 +36,8 @@
         <span class="book-category" id="on-small-card" > <%= book.category.upcase %> </span>
         <li> <%= link_to 'show', book_path(book) %> </li>
         <%= link_to '', book_path(book), class: 'card-link' %>
-
       </div>
-      <h3 class = "book-price"> <%= book.price %> $ </h3>
-      <span class = "book-category"> <%= book.category.upcase %> </span>
-      <li> <%= link_to 'show', book_path(book) %> </li>
-      <%= link_to '', book_path(book), class: 'card-link' %>
     </div>
-  </div>
   <% end %>
 </div>
 
