@@ -43,7 +43,7 @@ class BooksController < ApplicationController
   end
 
   def results
-    @books =  Book.search(params[:title]).order("created_at DESC")
+    @books = Book.search(params[:title]).order("created_at DESC")
   end
 
   private
