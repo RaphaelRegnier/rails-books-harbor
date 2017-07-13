@@ -9,6 +9,9 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all()
+    if params[:title]
+      redirect_to results_books_path
+    end
   end
 
   def new
@@ -37,6 +40,10 @@ class BooksController < ApplicationController
   def destroy
     @book.destroy
     redirect_to(:back)
+  end
+
+  def results
+    @books =  Book.search(params[:title]).order("created_at DESC")
   end
 
   private

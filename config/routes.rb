@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   resources :books do
     resources :orders, only: [:create]
+    collection do
+      get 'results', to: "books#results"
+    end
   end
   resources :orders, only: [:destroy]
   resources :users, only: [:show, :edit]
