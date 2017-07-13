@@ -22,11 +22,11 @@
       <div class="dates"> <%= order.start_time %> -- <%= order.end_time %></div>
 
       <div class="book-content">
-        <h3 class="book-title"> <%=order.book.title%> </h3>
-        <div class="book-description"> <%= order.book.description %></div>
+        <h3 class="book-title"> <%=truncate(order.book.title, length: 25, separator: " ", omission: " ..." )%> </h3>
+        <div class="book-description"> <%= truncate(order.book.description, length: 125) %></div>
       </div>
-      <h3 class = "book-price"> <%= order.book.price %> $ </h3>
-      <span class = "book-category"> <%= order.book.category.upcase %> </span>
+      <h3 class = "book-price"> <%= order.book.price %> $ / week</h3>
+      <span class = "book-category" id="on-small-card"> <%= order.book.category.upcase %> </span>
       <li> <%= link_to 'show', book_path(order.book) %> </li>
       <%= link_to '', book_path(order.book), class: 'card-link' %>
 
