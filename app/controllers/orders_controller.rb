@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
 
   def book_is_available(start_time, end_time, book)
     orders = Order.where(book_id: book.id)
-    date_range = start_time...end_time
+    date_range = start_time..end_time
     orders.each do |order|
       if order.start_time === date_range || order.end_time === date_range
         return book_available = false
