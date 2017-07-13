@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     #NEED TO LINK THE ORDER TO THE USER TO MAKE THE ORDER VALID FOR SAVE.
     @order.user = current_user
     @order.save
-    redirect_to book_path(@book)
+    redirect_to current_user
   end
 
   def destroy

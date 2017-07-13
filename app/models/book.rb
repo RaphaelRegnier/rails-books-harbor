@@ -5,6 +5,7 @@ class Book < ApplicationRecord
   has_attachment :photo
 
   def self.search(search)
-  where("title ILIKE ? OR author ILIKE ?", "%#{search}%", "%#{search}%")
+    where("title ILIKE ? OR author ILIKE ?", "%#{search}%", "%#{search}%")
   end
+
 end
