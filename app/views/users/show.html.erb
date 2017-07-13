@@ -1,7 +1,18 @@
 <div class="container margin-top">
+
+  <div class="text-center marginbot">
+    <div class="row">
+      <%= cl_image_tag @user.photo,  crop: :fill, class:"profile-pic" %>
+    </div>
+    <div class="row profile-name">
+      <%= @user.first_name.upcase %> <%= @user.last_name.upcase %>
+    </div>
+  </div>
+
+
   <div class="row">
 
-   <h3 class="index-title"> <span class="blue"> <%= @user.first_name %> </span><%= @user.last_name %> - <i>Your next lectures </i> </h3>
+   <h3 class="index-title text-center"> <span class="blue">YOUR </span> NEXT LECTURES</h3>
 
    <% @user.orders.each do |order| %>
 
