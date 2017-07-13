@@ -14,11 +14,10 @@
 
     <%= render 'layouts/navbar' %>
     <%= render 'layouts/flashes' %>
-
+  <div class="container under-navbar">
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
-
-
+  </div>
   </body>
 </html>
