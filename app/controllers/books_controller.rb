@@ -46,7 +46,6 @@ class BooksController < ApplicationController
   def results
     @books = Book.search(params[:title]).order("created_at DESC")
     @users = User.where.not(latitude: nil, longitude: nil)
-    @alert_message = "You are viewing #{@books} and #{@users}..."
     @hash = Gmaps4rails.build_markers(@users) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude

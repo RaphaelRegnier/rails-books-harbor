@@ -17,8 +17,8 @@
     </div>
     <% end %>
 </div>
-<div id="map" style="width: 100%; height: 600px;">
 
+<div id="map" style="width: 100%; height: 600px;">
   <% content_for(:after_js) do %>
     <%= javascript_tag do %>
       $(document).ready(function() {
@@ -26,9 +26,9 @@
         handler.buildMap({ internal: { id: 'map' } }, function() {
           markers = handler.addMarkers(<%= raw @hash.to_json %>);
           handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
+          handler.getMap().setZoom(5);
           if (markers.length == 0) {
-            handler.getMap().setZoom(2);
+            handler.getMap().setZoom(5);
           } else if (markers.length == 1) {
             handler.getMap().setZoom(14);
           }
