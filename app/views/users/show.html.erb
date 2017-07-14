@@ -31,7 +31,7 @@
           <div class="book-description"> <%= truncate(book.description, length: 125) %></div>
         </div>
         <h3 class = "book-price"> <%= book.price %> $ </h3>
-        <span class = "book-category"> <%= book.category.upcase %> </span>
+        <span class = "book-category" id= "on-small-card"> <%= book.category.upcase %> </span>
         <li> <%= link_to 'show', book_path(book) %> </li>
         <%= link_to '', book_path(book), class: 'card-link' %>
       </div>
