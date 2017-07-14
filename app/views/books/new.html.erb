@@ -1,12 +1,15 @@
 <div class="container margin-top">
-
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3">
 <%= simple_form_for [@book] do |f| %>
-<%= f.input :title %>
-<%= f.input :author, as: :string %>
-<%= f.input :price, as: :string %>
-<%= f.input :description, as: :string %>
-<%= f.input :category, as: :string %>
+<%= f.input :title, placeholder: 'Moby Dick' %>
+<%= f.input :author, as: :string, placeholder: 'Herman Melville'%>
+<%= f.input :price, as: :string ,label: 'Price per week', placeholder: 'Your price per week'%>
+<%= f.input :description, as: :text, placeholder: 'Moby-Dick or, The Whale is a novel published in 1851 during the period of the American Renaissance..'%>
+<%= f.input :category, as: :string, placeholder: 'Novel /  ‎Adventure fiction‎'%>
 <%= f.input :photo, as: :attachinary %>
 <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
+</div>
+</div>
 </div>
