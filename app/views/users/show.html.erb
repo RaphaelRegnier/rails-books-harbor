@@ -35,7 +35,6 @@
 
 
   <div class="row">
-
    <h3 class="index-title"> <span class="blue">YOUR </span> NEXT LECTURES</h3>
 
    <% @user.orders.each do |order| %>
@@ -54,10 +53,8 @@
       <li> <%= link_to 'show', book_path(order.book) %> </li>
       <%= link_to '', book_path(order.book), class: 'card-link' %>
 
-    </div>
-  </div>
-  <% end %>
 
-</div>
-</div>
-<h4 class="under-navbar"><%= link_to "Edit", edit_user_registration_path %></h4>
+    </div>
+    <% end %>
+  </div>
+<h4 class="under-navbar"><%= link_to "Edit Profile", edit_user_registration_path %></h4>
