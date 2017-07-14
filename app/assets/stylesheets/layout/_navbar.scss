@@ -5,7 +5,10 @@
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
-  padding: 0px 30px;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 30px;
+  padding-bottom: 0px;
   align-items: center;
   justify-content: space-between;
 }
@@ -20,13 +23,14 @@
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 1;
+  z-index: 4;
   width: 100%;
 }
 
 /* Navbar logo */
 .navbar-wagon-brand img {
   width: 50px;
+  margin: 0px 10px;
 }
 /* Nabar left section */
 .navbar-left {
