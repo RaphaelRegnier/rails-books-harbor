@@ -33,6 +33,12 @@ background-size: cover;
 background-position-x: center;
 }
 
+.avatar-user {
+  position: relative;
+  right: 65px;    top: 95px;
+  }
+
+
 .banner-description{
 position: absolute;
 right: 0px;
@@ -139,3 +145,5 @@ text-decoration: none;
 .btn-default:hover {
   border-color: $blue;
 }
+
+
