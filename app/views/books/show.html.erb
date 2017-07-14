@@ -1,6 +1,5 @@
-
+<div class="margin-top">
 <div class="banner-show">
-
   <div class = "banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @book.photo.path %>');" >
   </div>
 
@@ -20,7 +19,7 @@
   <div class="book-full-description"> <%= truncate(@book.description, length: 420, omission: " ...", separator: " ") %></div>
 
 
-  <h3 id="price" class = "book-price "> <%= @book.price %> $ | week</h3>
+  <h3 id="price" class = "book-price bigger"> <%= @book.price %> $ | week</h3>
 
   <div class = "list-of-dates"> <h4> <i class="fa fa-calendar" aria-hidden="true"> </i> Calendar </h4>
       <% @book.orders.each do |order| %>
@@ -35,10 +34,6 @@
 </div>
 <!-- -------------- -->
 
-
-
-
-
 </div>
 
 <% content_for(:after_js) do %>
@@ -48,7 +43,7 @@ $('.datepicker').datepicker();
 });
 <% end %>
 <% end %>
-
+</div>
 
 
 

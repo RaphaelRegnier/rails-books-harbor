@@ -3,6 +3,11 @@
   margin-top:100px;
 }
 
+.profile-page {
+  margin: 10px 10px;
+}
+
+
 .index-title{
    font-family: 'Roboto', serif;
    font-weight: 500;
@@ -12,7 +17,6 @@
     color: $blue;
    }
 }
-
 
 .list-of-dates{
  top: 55%;
@@ -43,8 +47,7 @@ background-color: black;
 z-index: 3;
 &:hover{
   text-decoration: none;
-}
-
+ }
 }
 
 .dates{
@@ -101,6 +104,7 @@ z-index: 3;
   color: grey;
   font-size: 15px;
   font-weight:400;
+  text-align: justify;
 }
 
 .book-price{
@@ -125,6 +129,11 @@ z-index: 3;
   #on-small-card{
     bottom:10px;
   left:20px;
+  }
+
+  #on-big-card{
+    font-size: 15px;
+    margin-top: 5px;
   }
 
 
