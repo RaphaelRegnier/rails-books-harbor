@@ -21,7 +21,7 @@
               <h3 class="book-title"> <%= truncate(book.title, length: 25, separator: " ", omission: " ...") %> </h3>
                 <div class="book-description"> <%= truncate(book.description, length: 100) %></div>
               </div>
-              <h3 class = "book-price"> <%= book.price %> $ / week </h3>
+              <h3 class = "book-price"> <%= book.price %> $ | week </h3>
               <span class = "book-category" id= "on-small-card"> <%= book.category.upcase %> </span>
               <li> <%= link_to 'show', book_path(book) %> </li>
               <%= link_to '', book_path(book), class: 'card-link' %>
@@ -43,7 +43,7 @@
         <h3 class="book-title"> <%= truncate(book.title, length: 25, separator: " ", omission: " ...") %> </h3>
           <div class="book-description"> <%= truncate(book.description, length: 100)%></div>
         </div>
-        <h3 class = "book-price"> <%= book.price %> $ / week </h3>
+        <h3 class = "book-price"> <%= book.price %> $ | week </h3>
         <span class="book-category" id="on-small-card" > <%= book.category.upcase %> </span>
         <li> <%= link_to 'show', book_path(book) %> </li>
         <%= link_to '', book_path(book), class: 'card-link' %>

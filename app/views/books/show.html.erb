@@ -1,15 +1,23 @@
 <div class="margin-top">
 <div class="banner-show">
+
   <div class = "banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @book.photo.path %>');" >
+
+   <div class = "avatar-user">
+    <a href="/users/<%= @book.user.id %>" >
+      <% avatar_url = @book.user.facebook_picture_url || "http://placehold.it/30x30" %>
+      <%= image_tag avatar_url, class: 'avatar-large'%>
+    </a>
+  </div>
   </div>
 
 
-
-
- <div class="banner-description">
+  <div class="banner-description">
    <div class="flexbox-title">
     <h3 class="book-title"> <%= @book.title%> <p id="author"> <i> by <%= @book.author %> </i></p> </h3>
   </div>
+
+
   <div class="book-full-description"> <%= truncate(@book.description, length: 420, omission: " ...", separator: " ") %></div>
 
  <div >
@@ -28,13 +36,14 @@
       <% end %>
     </div>
 
-
 </div>
+
 <!-- CATEGORIES IN FLEXBOX AT BOTTOM  -->
 <div class="flexbox-categories">
   <span class = "book-category" id="on-big-card"> <%= @book.category.upcase %> </span>
 </div>
 <!-- -------------- -->
+
 
 </div>
 
@@ -45,6 +54,10 @@ $('.datepicker').datepicker();
 });
 <% end %>
 <% end %>
+</div>
+
+<div class="go-back">
+   <%= link_to root_path do %><h3>  < BACK </h3><% end %>
 </div>
 
 

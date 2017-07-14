@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_many :books
   has_many :orders
-  has_attachment  :avatar, accept: [:jpg, :png, :gif]
-  has_attachment :photo
+  has_attachment :avatar, accept: [:jpg, :png, :gif]
+  has_attachment :attachment
   validates :first_name, :last_name, presence: true
   geocoded_by :pickup_address
   after_validation :geocode, if: :pickup_address_changed?

@@ -2,12 +2,14 @@
 
   <div class="text-center marginbot">
     <div class="row">
-      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
-      <%= image_tag avatar_url, class: "profile-pic" %>
-      <%# cl_image_tag @user.photo, crop: :fill, class:"profile-pic" %>
+      <%# if !@user.Attachment.empty? %>
+        <% avatar_url = @user.facebook_picture_url  || cl_image_path(@user.attachment.path) || "http://placehold.it/30x30" %>
+        <%= image_tag avatar_url, class: "profile-pic" %>
+      <%# avatar_url = @user.facebook_picture_url || "http://placehold.it/30x30" %>
     </div>
-    <div class="row profile-name">
-      <%= @user.first_name.upcase %> <%= @user.last_name.upcase %>
+    <div class="row">
+      <h2 class="profile-name"><%= @user.first_name.upcase %> <%= @user.last_name.upcase %></h2>
+      <h4><%= @user.email %></h4>
     </div>
   </div>
 
@@ -61,7 +63,7 @@
         <h3 class="book-title"> <%=truncate(order.book.title, length: 25, separator: " ", omission: " ..." )%> </h3>
         <div class="book-description"> <%= truncate(order.book.description, length: 125) %></div>
       </div>
-      <h3 class = "book-price"> <%= order.book.price %> $ / week</h3>
+      <h3 class = "book-price"> <%= order.book.price %> $ | week</h3>
       <span class = "book-category" id="on-small-card"> <%= order.book.category.upcase %> </span>
       <li> <%= link_to 'show', book_path(order.book) %> </li>
       <%= link_to '', book_path(order.book), class: 'card-link' %>
@@ -73,5 +75,10 @@
 <% if @user.id == current_user.id %>
    <h4 class="under-navbar"><%= link_to "Edit Profile", edit_user_registration_path %></h4>
 <% end %>
+
+<div class="go-back">
+   <%= link_to root_path do %><h3>  < BACK </h3><% end %>
+</div>
+
 
 
