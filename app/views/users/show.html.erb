@@ -7,8 +7,9 @@
         <%= image_tag avatar_url, class: "profile-pic" %>
       <%# avatar_url = @user.facebook_picture_url || "http://placehold.it/30x30" %>
     </div>
-    <div class="row profile-name">
-      <%= @user.first_name.upcase %> <%= @user.last_name.upcase %>
+    <div class="row">
+      <h2 class="profile-name"><%= @user.first_name.upcase %> <%= @user.last_name.upcase %></h2>
+      <h4><%= @user.email %></h4>
     </div>
   </div>
 

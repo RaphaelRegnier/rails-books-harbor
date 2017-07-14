@@ -68,5 +68,5 @@ i+=1
 end
 
 # TEST ACCOUNT
-admin = User.create(first_name: 'Pika', last_name: 'Chu',email: 'pikachu@pokemail.net', password: 'pikapika', pickup_address: 'Downtown, Montreal')
+admin = User.create(first_name: 'Pika', last_name: 'Chu',email: 'pikachu@pokemail.net', password: 'pikapika', pickup_address: 'Downtown, Montreal', attachment_url: "app/assets/images/pika.jpg")
 
