@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20170713162421) do
     t.string   "author"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.index ["user_id"], name: "index_books_on_user_id", using: :btree
   end
 
