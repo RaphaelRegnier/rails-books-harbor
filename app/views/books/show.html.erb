@@ -2,6 +2,13 @@
 <div class="banner-show">
 
   <div class = "banner-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path @book.photo.path %>');" >
+
+   <div class = "avatar-user">
+    <a href="/users/<%= @book.user.id %>" >
+      <% avatar_url = @book.user.facebook_picture_url || "http://placehold.it/30x30" %>
+      <%= image_tag avatar_url, class: 'avatar-large'%>
+    </a>
+  </div>
   </div>
 
 
@@ -21,10 +28,6 @@
     <h3 class="book-title"> <%= @book.title%> <p id="author"> <i> by <%= @book.author %> </i></p> </h3>
   </div>
 
-   <div class = "avatar-user">
-      <% avatar_url = @book.user.facebook_picture_url || "http://placehold.it/30x30" %>
-      <%= image_tag avatar_url, class: 'avatar-large'%>
-  </div>
 
   <div class="book-full-description"> <%= truncate(@book.description, length: 420, omission: " ...", separator: " ") %></div>
 
