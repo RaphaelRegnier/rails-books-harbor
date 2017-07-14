@@ -2,17 +2,40 @@
 
   <div class="text-center marginbot">
     <div class="row">
-      <%= cl_image_tag @user.photo,  crop: :fill, class:"profile-pic" %>
+      <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
+      <%= image_tag avatar_url, class: "profile-pic" %>
+      <%# cl_image_tag @user.photo, crop: :fill, class:"profile-pic" %>
     </div>
     <div class="row profile-name">
       <%= @user.first_name.upcase %> <%= @user.last_name.upcase %>
     </div>
   </div>
 
+  <div class="row my-collection">
+    <% if user_signed_in? && !current_user.books.empty? %>
+  <h3 class = "index-title"><span class="blue"> MY </span>  COLLECTION</h3>
+      <% current_user.books.each do |book| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 padded">
+          <div class="card">
+            <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path book.photo.path %>');" > </div>
+              <div class="book-content">
+              <h3 class="book-title"> <%= book.title%> </h3>
+                <div class="book-description"> <%= book.description %></div>
+              </div>
+              <h3 class = "book-price"> <%= book.price %> $ </h3>
+              <span class = "book-category"> <%= book.category.upcase %> </span>
+              <li> <%= link_to 'show', book_path(book) %> </li>
+              <%= link_to '', book_path(book), class: 'card-link' %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+
+
 
   <div class="row">
-
-   <h3 class="index-title text-center"> <span class="blue">YOUR </span> NEXT LECTURES</h3>
+   <h3 class="index-title"> <span class="blue">YOUR </span> NEXT LECTURES</h3>
 
    <% @user.orders.each do |order| %>
 
@@ -30,10 +53,8 @@
       <li> <%= link_to 'show', book_path(order.book) %> </li>
       <%= link_to '', book_path(order.book), class: 'card-link' %>
 
-    </div>
-  </div>
-  <% end %>
 
-</div>
-</div>
-<h4 class="under-navbar"><%= link_to "Edit", edit_user_registration_path %></h4>
+    </div>
+    <% end %>
+  </div>
+<h4 class="under-navbar"><%= link_to "Edit Profile", edit_user_registration_path %></h4>
