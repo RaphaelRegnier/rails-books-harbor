@@ -1,7 +1,27 @@
 // SHOULD BE IN ANOTHER PAGE
 .margin-top{
   margin-top:100px;
+  padding-bottom: 30px;
 }
+
+.flexbox-harbor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-description{
+ font-family: 'Raleway', serif;
+  font-size: 76px;
+  font-weight: lighter;
+  color: grey;
+  text-align: right;
+  padding-right:40px;
+  line-height: 80px;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+}
+
 
 .profile-page {
   margin: 10px 10px;
@@ -9,17 +29,30 @@
 
 
 .index-title{
+  margin-top: 40px;
    font-family: 'Roboto', serif;
    font-weight: 500;
    font-size: 35px;
    margin-left: 10px;
-   .blue{
-    color: $blue;
    }
+
+.books-harbor{
+  font-family: 'Raleway', serif;
+  font-size: 80px;
+  font-weight: 700;
+  border-left: grey 1px solid;
+  padding-left:40px;
+  line-height: 80px;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
 }
 
+.blue{
+    color: $blue;
+   }
+
 .list-of-dates{
- top: 55%;
+ top: 65%;
   right: 50px;
   font-family: 'Roboto', serif;
   list-style: none;

@@ -12,17 +12,6 @@
   </div>
 
 
-
-  <div >
-   <%= simple_form_for [@book, @order], html: {class: "flexbox-order-form"} do |f| %>
-   <%= f.input :start_time, as: :string, label: "From:",placeholder: 'start-date', input_html: { class: 'datepicker'}, wrapper_html: {class: 'smaller'} %>
-   <%= f.input :end_time, as: :string, label: "to:",placeholder: 'end-date', input_html: { class: 'datepicker'}, wrapper_html: {class: 'smaller'}%>
-   <%= f.button :submit, class: 'btn btn-order' %>
-   <% end %>
-  </div>
-
-
-
   <div class="banner-description">
    <div class="flexbox-title">
     <h3 class="book-title"> <%= @book.title%> <p id="author"> <i> by <%= @book.author %> </i></p> </h3>
@@ -31,16 +20,24 @@
 
   <div class="book-full-description"> <%= truncate(@book.description, length: 420, omission: " ...", separator: " ") %></div>
 
+ <div >
+   <%= simple_form_for [@book, @order], html: {class: "flexbox-order-form"} do |f| %>
+   <%= f.input :start_time, as: :string, label: "From:",placeholder: 'start-date', input_html: { class: 'datepicker'}, wrapper_html: {class: 'smaller'} %>
+   <%= f.input :end_time, as: :string, label: "to:",placeholder: 'end-date', input_html: { class: 'datepicker'}, wrapper_html: {class: 'smaller'}%>
+   <%= f.button :submit, class: 'btn btn-order' %>
+   <% end %>
+ </div>
 
   <h3 id="price" class = "book-price bigger"> <%= @book.price %> $ | week</h3>
 
   <div class = "list-of-dates"> <h4> <i class="fa fa-calendar" aria-hidden="true"> </i> Calendar </h4>
-      <% @book.orders.each do |order| %>
+      <% @book.orders.first(3).each do |order| %>
       <a href="/users/<%= order.user.id %>" class="profile-link" > <div class="date-element"> <%= order.user.first_name%> : <%= order.start_time %> | <%= order.end_time %>  </div> </a>
       <% end %>
     </div>
 
-  </div>
+</div>
+
 <!-- CATEGORIES IN FLEXBOX AT BOTTOM  -->
 <div class="flexbox-categories">
   <span class = "book-category" id="on-big-card"> <%= @book.category.upcase %> </span>
