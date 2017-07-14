@@ -29,7 +29,7 @@ user.save
 # user10 = User.create(first_name: Faker::Name.first_name , last_name: Faker::Name.last_name,email: Faker::Internet.email, password: Faker::Internet.password, pickup_address: addresses[i])
 
 
-book = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 30), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(50, true) ,user: user, photo_url: urls[i])
+book = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 10), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(50, true) ,user: user, photo_url: urls[i])
 book.save
 
 # book2 = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 30), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(50, true) ,user: user2, photo_url: urls[i])
