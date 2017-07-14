@@ -3,6 +3,11 @@
   margin-top:100px;
 }
 
+.profile-page {
+  margin: 10px 10px;
+}
+
+
 .index-title{
    font-family: 'Roboto', serif;
    font-weight: 500;
@@ -12,7 +17,6 @@
     color: $blue;
    }
 }
-
 
 .list-of-dates{
  top: 55%;
@@ -43,8 +47,7 @@ background-color: black;
 z-index: 3;
 &:hover{
   text-decoration: none;
-}
-
+ }
 }
 
 .dates{
