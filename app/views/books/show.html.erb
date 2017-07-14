@@ -27,12 +27,13 @@
       <% end %>
     </div>
 
-</div>
+  </div>
 <!-- CATEGORIES IN FLEXBOX AT BOTTOM  -->
 <div class="flexbox-categories">
   <span class = "book-category" id="on-big-card"> <%= @book.category.upcase %> </span>
 </div>
 <!-- -------------- -->
+
 
 </div>
 
@@ -43,6 +44,10 @@ $('.datepicker').datepicker();
 });
 <% end %>
 <% end %>
+</div>
+
+<div class="go-back">
+   <%= link_to root_path do %><h3>  < BACK </h3><% end %>
 </div>
 
 
