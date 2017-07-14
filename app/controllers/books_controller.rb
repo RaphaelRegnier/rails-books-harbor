@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :results]
   ## it skips the sign-in action only for index and show pages
   def show
     #THE FORM FOR THE NEW ORDER IS ON THE SHOW PAGE OF THE BOOK
