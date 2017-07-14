@@ -28,7 +28,7 @@
         <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path book.photo.path %>');" > </div>
         <div class="book-content">
           <h3 class="book-title"> <%= book.title%> </h3>
-          <div class="book-description"> <%= book.description %></div>
+          <div class="book-description"> <%= truncate(book.description, length: 125) %></div>
         </div>
         <h3 class = "book-price"> <%= book.price %> $ </h3>
         <span class = "book-category"> <%= book.category.upcase %> </span>
