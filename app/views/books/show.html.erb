@@ -5,7 +5,7 @@
 
    <div class = "avatar-user">
     <a href="/users/<%= @book.user.id %>" >
-      <% avatar_url = @book.user.facebook_picture_url || "http://placehold.it/30x30" %>
+      <% avatar_url = @book.user.facebook_picture_url || cl_image_path(@book.user.attachment.path) || "http://placehold.it/30x30" %>
       <%= image_tag avatar_url, class: 'avatar-large'%>
     </a>
   </div>
