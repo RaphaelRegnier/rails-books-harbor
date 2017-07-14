@@ -33,6 +33,13 @@ background-size: cover;
 background-position-x: center;
 }
 
+.avatar-user {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  }
+
+
 .banner-description{
 position: absolute;
 right: 0px;
@@ -140,6 +147,7 @@ text-decoration: none;
   border-color: $blue;
 }
 
+
 .go-back{
   margin: 50px;
 }
@@ -157,3 +165,4 @@ text-decoration: none;
 .go-back a:hover{
   text-decoration: none;
 }
+
