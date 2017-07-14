@@ -1,10 +1,9 @@
 .profile-pic{
   height: 250px;
   width: 250px;
+  // object-fit: fill;
   border-radius: 50%;
-  border: solid 12px #0FCFCA;
-  // border: solid 10px #ebebeb;
-
+  border: solid 5px #0FCFCA;
   margin-bottom: 40px;
 }
 
@@ -18,8 +17,4 @@
   padding-bottom: 40px;
   margin-bottom: 40px;
   border-bottom: solid 3px #ebebeb;
-}
-
-.my-collection{
-  margin-bottom: 40px;
 }
