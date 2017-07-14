@@ -7,17 +7,18 @@ urls = %w(https://images.pexels.com/photos/256232/pexels-photo-256232.jpeg?w=126
 addresses = ["Manchester, canada", "laval, canada", "Albany, canada", "Mont-Tremblant, canada", "Alcove, canada", "Quebec city, canada", "Montreal east, canada", "Blainville, canada", "Sherbrooke, canada", "Burnstown, canada"]
 people = %w(http://lorempixel.com/400/400/people/1/ http://lorempixel.com/400/400/people/2/ http://lorempixel.com/400/400/people/3/ http://lorempixel.com/400/400/people/4/ http://lorempixel.com/400/400/people/5/ http://lorempixel.com/400/400/people/6/ http://lorempixel.com/400/400/people/7/ http://lorempixel.com/400/400/people/8/ http://lorempixel.com/400/400/people/9/ http://lorempixel.com/400/400/people/10/)
 
-10.times do
-user = User.create(first_name: Faker::Name.first_name , last_name: Faker::Name.last_name,email: Faker::Internet.email, password: Faker::Internet.password, pickup_address: addresses[i], attachment_url: people[i])
-user.save
+
+5.times do
+user1 = User.create(first_name: Faker::Name.first_name , last_name: Faker::Name.last_name,email: Faker::Internet.email, password: Faker::Internet.password, pickup_address: addresses[i], attachment_url: people[i])
+book1 = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 10), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(50, true) ,user: user1, photo_url: urls[i])
+i +=1
+user2 = User.create(first_name: Faker::Name.first_name , last_name: Faker::Name.last_name,email: Faker::Internet.email, password: Faker::Internet.password, pickup_address: addresses[i], attachment_url: people[i])
+book2 = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 10), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(50, true) ,user: user2, photo_url: urls[i])
 
 
-book = Book.create(title: Faker::Book.title, price: Faker::Number.between(1, 10), category: Faker::Book.genre, author: Faker::Book.author, description: Faker::Lorem.sentence(50, true) ,user: user, photo_url: urls[i])
-book.save
+order1 = Order.create(start_time: Faker::Date.between(Date.today, 1.week.from_now) ,end_time: Faker::Date.between(1.week.from_now, 2.week.from_now), book: book1, user: user2)
+order2 = Order.create(start_time: Faker::Date.between(Date.today, 1.week.from_now) ,end_time: Faker::Date.between(1.week.from_now, 2.week.from_now), book: book2, user: user1)
 
-
-order = Order.create(start_time: Faker::Date.between(Date.today, 1.week.from_now) ,end_time: Faker::Date.between(1.week.from_now, 2.week.from_now), book: book, user: user)
-order.save
 i+=1
 
 end
