@@ -22,7 +22,7 @@
 <span class="blue"> <%= @user.first_name.upcase %>' S
 <% end %>
  </span> COLLECTION</h3></h3>
-    <% current_user.books.each do |book| %>
+    <% @user.books.each do |book| %>
     <div class="col-xs-12 col-sm-6 col-md-4 padded">
       <div class="card profile-page">
         <div class = "card-image" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url('<%= cl_image_path book.photo.path %>');" > </div>
