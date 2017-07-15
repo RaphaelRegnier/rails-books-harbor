@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.book = @book
     @order.user = current_user
-    if book_is_available(@order.start_time, @order.end_time, @book)
+    if book_is_available(@order.start_time, @order.end_time, @book) && current_user != @book.user
        @order.save
         redirect_to current_user
     else
