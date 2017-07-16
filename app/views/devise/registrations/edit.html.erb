@@ -1,33 +1,40 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container margin-top">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+      <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-  <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :email, required: true, autofocus: true %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+      <div class="form-inputs">
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :email, required: true, autofocus: true %>
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-    <%= f.input :pickup_address %>
-    <%= f.input :attachment, as: :attachinary %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
 
+        <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false, label: "New password" %>
+        <%= f.input :password_confirmation, required: false, label: "New password confirmation" %>
+        <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+        <%= f.input :pickup_address, label: "Pick-up address for the books you lend", placeholder: "3221 chemin des oursinettes"%>
+        <%= f.input :attachment, as: :attachinary, label: "Your profile picture" %>
+
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Update", class: "btn btn-order" %>
+      </div>
+      <% end %>
+
+      <h3>Cancel my account</h3>
+
+      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+      <%= link_to "Back", :back %>
+
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
-
+</div>
