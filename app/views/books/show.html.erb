@@ -18,7 +18,7 @@
   </div>
 
 
-  <div class="book-full-description"> <%= truncate(@book.description, length: 420, omission: " ...", separator: " ") %></div>
+  <div class="book-full-description"> <%= @book.description %></div>
 
  <div >
    <%= simple_form_for [@book, @order], html: {class: "flexbox-order-form"} do |f| %>
@@ -30,7 +30,10 @@
 
   <h3 id="price" class = "book-price bigger"> <%= @book.price %> $ | week</h3>
 
-  <div class = "list-of-dates"> <h4> <i class="fa fa-calendar" aria-hidden="true"> </i> Calendar </h4>
+  <div class = "list-of-dates">
+<% unless @book.orders.empty?%>
+  <h4> <i class="fa fa-calendar" aria-hidden="true"> </i> Calendar </h4>
+<% end %>
       <% @book.orders.first(3).each do |order| %>
       <a href="/users/<%= order.user.id %>" class="profile-link" > <div class="date-element"> <%= order.user.first_name%> : <%= order.start_time %> | <%= order.end_time %>  </div> </a>
       <% end %>

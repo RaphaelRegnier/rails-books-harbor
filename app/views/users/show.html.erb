@@ -46,12 +46,14 @@
 
   <div class="row">
    <h3 class="index-title">
+   <% unless @user.orders.empty? %>
  <% if @user.id == current_user.id %>
    <span class="blue">YOUR
 <% else %>
 <span class="blue"> <%= @user.first_name.upcase %>' S
 <% end %>
  </span> NEXT LECTURES</h3>
+<% end %>
    <% @user.orders.each do |order| %>
 
    <div class="col-xs-12 col-sm-6 col-md-4 padded">
