@@ -34,6 +34,9 @@
         </div>
         <h3 class = "book-price"> <%= book.price %> $ </h3>
         <span class = "book-category" id= "on-small-card"> <%= book.category.upcase %> </span>
+        <% if @user.id == current_user.id %>
+      <%= link_to '', book, method: :delete, class: 'fa fa-times cross' %>
+<% end %>
         <li> <%= link_to 'show', book_path(book) %> </li>
         <%= link_to '', book_path(book), class: 'card-link' %>
       </div>
