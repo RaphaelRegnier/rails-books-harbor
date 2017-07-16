@@ -32,5 +32,4 @@ class User < ApplicationRecord
 
     return user
   end
-
 end
