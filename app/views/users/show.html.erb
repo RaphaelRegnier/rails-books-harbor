@@ -18,12 +18,14 @@
   <div class="row my-collection">
     <% if user_signed_in? && !current_user.books.empty? %>
     <h3 class = "index-title">
+<% unless @user.books.empty? %>
     <% if @user.id == current_user.id %>
    <span class="blue">YOUR
 <% else %>
 <span class="blue"> <%= @user.first_name.upcase %>' S
 <% end %>
  </span> COLLECTION</h3></h3>
+<% end %>
     <% @user.books.each do |book| %>
     <div class="col-xs-12 col-sm-6 col-md-4 padded">
       <div class="card profile-page">
