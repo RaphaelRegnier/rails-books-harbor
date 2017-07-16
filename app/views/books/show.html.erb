@@ -34,7 +34,7 @@
 <% unless @book.orders.empty?%>
   <h4> <i class="fa fa-calendar" aria-hidden="true"> </i> Calendar </h4>
 <% end %>
-      <% @book.orders.first(4).each do |order| %>
+      <% @book.orders.each do |order| %>
       <a href="/users/<%= order.user.id %>" class="profile-link" > <div class="date-element"> <%= order.user.first_name%> : <%= order.start_time %> | <%= order.end_time %>  </div> </a>
       <% end %>
     </div>
