@@ -34,10 +34,14 @@
 <% unless @book.orders.empty?%>
   <h4> <i class="fa fa-calendar" aria-hidden="true"> </i> Calendar </h4>
 <% end %>
-      <% @book.orders.first(3).each do |order| %>
+      <% @book.orders.first(4).each do |order| %>
       <a href="/users/<%= order.user.id %>" class="profile-link" > <div class="date-element"> <%= order.user.first_name%> : <%= order.start_time %> | <%= order.end_time %>  </div> </a>
       <% end %>
     </div>
+
+<% unless @book.user.pickup_address.nil? %>
+<div class="map-book" id="map" ></div>
+<% end %>
 
 </div>
 
@@ -66,6 +70,19 @@ $('.datepicker').datepicker();
 
 
 
+<% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).ready(function() {
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function() {
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+           handler.getMap().setZoom(14);
+        });
+      });
+    <% end %>
+  <% end %>
 
 
 

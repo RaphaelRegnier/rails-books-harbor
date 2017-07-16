@@ -5,6 +5,12 @@ class BooksController < ApplicationController
   def show
     #THE FORM FOR THE NEW ORDER IS ON THE SHOW PAGE OF THE BOOK
     @order = Order.new()
+    @user=@book.user
+    @hash = Gmaps4rails.build_markers(@user) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def index
