@@ -4,8 +4,17 @@
     <div class="row">
       <%# if !@user.Attachment.empty? %>
         <% avatar_url = @user.facebook_picture_url  || cl_image_path(@user.attachment.path) || "http://placehold.it/30x30" %>
-        <%= image_tag avatar_url, class: "profile-pic" %>
+
+        <div class = "profile-pic" style="background-image: url('<%= avatar_url %>');" >
+<% if @user.id == current_user.id %>
+   <%= link_to '', edit_user_registration_path, class: "fa fa-pencil cross" %>
+<% end %>
+
+
+        <!-- <%= image_tag avatar_url, class: "profile-pic" %> -->
       <%# avatar_url = @user.facebook_picture_url || "http://placehold.it/30x30" %>
+
+      </div>
     </div>
     <div class="row">
       <h2 class="profile-name"><%= @user.first_name.upcase %> <%= @user.last_name.upcase %></h2>
@@ -79,9 +88,7 @@
   <% end %>
 </div>
 
-<% if @user.id == current_user.id %>
-   <h4><%= link_to "Edit Profile", edit_user_registration_path %></h4>
-<% end %>
+
 
 <div class="go-back user-back">
    <%= link_to :back do %><h3>  < BACK </h3><% end %>
