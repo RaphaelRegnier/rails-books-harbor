@@ -9,7 +9,9 @@
     </div>
     <div class="row">
       <h2 class="profile-name"><%= @user.first_name.upcase %> <%= @user.last_name.upcase %></h2>
+<% if order_with_user? %>
       <h4><%= @user.email %></h4>
+<% end %>
     </div>
   </div>
 
